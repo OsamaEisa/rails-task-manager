@@ -1,0 +1,8 @@
+<h1>All Tasks</h1> <br/>
+<div>
+  <% @tasks.each do |task| %>
+    <p> <%= task.id %> <%= link_to task.title, "/tasks/#{task.id}" %> <%= link_to "X", task_path(task),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+class: "btn btn-danger" %></p> <br/>
+  <% end %>
+</div>

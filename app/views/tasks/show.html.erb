@@ -1,0 +1,10 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<p>Completed: <%= @task.completed %></p>
+
+
+<%= link_to "Edit task", edit_task_path(@task), class: "btn btn-warning" %>
+<%= link_to "Delete task", task_path(@task),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+class: "btn btn-danger" %>
+<h4><%= link_to "All tasks", tasks_path, class: "btn btn-primary m-4" %></h4>
